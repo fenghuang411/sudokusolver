@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_green" >
+
+    <ImageView
+        android:id="@+id/puzzle_easy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/easy" />
+
+    <ImageView
+        android:id="@+id/puzzle_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/puzzle_easy"
+        android:layout_below="@+id/puzzle_easy"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/medium" />
+
+    <ImageView
+        android:id="@+id/puzzle_hard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/puzzle_medium"
+        android:layout_below="@+id/puzzle_medium"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/hard" />
+
+    <ImageView
+        android:id="@+id/puzzle_superhard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/puzzle_hard"
+        android:layout_below="@+id/puzzle_hard"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/superhard" />
+
+    <Spinner
+        android:id="@+id/spinner_easy"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/puzzle_easy"
+        android:layout_marginRight="50dp"
+        android:entries="@array/puzzles_easy"
+          />
+    <Spinner
+        android:id="@+id/spinner_medium"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/puzzle_medium"
+        android:layout_marginRight="50dp"
+        android:entries="@array/puzzles_medium"
+          />
+    <Spinner
+        android:id="@+id/spinner_hard"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/puzzle_hard"
+        android:layout_marginRight="50dp"
+        android:entries="@array/puzzles_hard"
+		 />
+    <Spinner
+        android:id="@+id/spinner_superhard"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/puzzle_superhard"
+        android:layout_marginRight="50dp"
+        android:entries="@array/puzzles_superhard"
+         />
+
+    <ImageView
+        android:id="@+id/toPlay"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/play" />
+
+    <ImageView
+        android:id="@+id/puzzle_create"
+       android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/create1" />
+
+</RelativeLayout>

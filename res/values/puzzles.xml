@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/background_green" name="background_green">#B5E61D</color>
+     <color android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/unit_blue" name="unit_blue">#00CCCC</color>
+       <color android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/unit_blue2" name="unit_blue2">#00CC64</color>
+       <color android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/unit_black" name="unit_black">#000000</color>
+              <color android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/unit_yellow" name="unit_yellow">#ffff66</color>
+              <color android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/unit_red" name="unit_red">#ff0000</color>
+    <string-array name="puzzles_easy" android:id="@+id/puzzles_easy">
+        <item >E1</item>
+        <item >E2</item>
+        <item >E3</item>
+        <item >E4</item>
+        <item >E5</item>
+    </string-array>
+    <string-array name="puzzles_medium" android:id="@+id/puzzles_medium">
+        <item >M1</item>
+        <item >M2</item>
+        <item >M3</item>
+        <item >M4</item>
+        <item >M5</item>
+    </string-array>
+    <string-array name="puzzles_hard" android:id="@+id/puzzles_hard">
+        <item >H1</item>
+        <item >H2</item>
+        <item >H3</item>
+        <item >H4</item>
+        <item >H5</item>
+    </string-array>
+        <string-array name="puzzles_superhard" android:id="@+id/puzzles_superhard">
+        <item >S1</item>
+        <item >S2</item>
+        <item >S3</item>
+        <item >S4</item>
+        <item >S5</item>
+    </string-array>
+        
+    
+</resources>
