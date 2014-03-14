@@ -59,10 +59,10 @@ public class MainActivity extends ActionBarActivity {
 	int create_last_touched_index;
 	int create_last_saved_color;
 	int create_last_index;
-	Map<TextView,Integer> unknow_list;
-	Map<TextView,Integer> select_list;
-	Map<TextView,Integer> create_unit_list;
-	Map<TextView,Integer> create_select_list;
+	Map<TextView,Integer> unknow_list = null;
+	Map<TextView,Integer> select_list = null;
+	Map<TextView,Integer> create_unit_list = null;
+	Map<TextView,Integer> create_select_list = null;
 	String puzzle_string;
 	String answer_string;
 	String create_string;
@@ -416,7 +416,7 @@ public class MainActivity extends ActionBarActivity {
 					create_unit_list.put(create_units[i], i);
 				}
 			}
-			else if (create_select_list.containsKey(v)){ // on select touched in create panel
+			else if ( create_select_list != null && create_select_list.containsKey(v)){ // on select touched in create panel
 				if (create_select_list.get(v) == 0){ // erase
 					create_last_touched.setText("");
 					create_chars[create_last_index] = '0';
@@ -439,7 +439,7 @@ public class MainActivity extends ActionBarActivity {
 					create_last_touched.setBackgroundColor(getResources().getColor(R.color.unit_yellow));
 				}
 			}
-			else if (create_unit_list.containsKey(v)){ // on unit touched in create panel
+			else if (create_unit_list != null && create_unit_list.containsKey(v)){ // on unit touched in create panel
 				if (create_last_touched != null)
 					create_last_touched.setBackgroundColor(create_last_saved_color);
 				// save this for next call
@@ -448,7 +448,7 @@ public class MainActivity extends ActionBarActivity {
 				create_last_index = create_unit_list.get(v);
 				v.setBackgroundColor(getResources().getColor(R.color.unit_yellow));
 			}
-			else if (unknow_list.containsKey(v)){ // on unit touched on solving panel
+			else if (unknow_list != null && unknow_list.containsKey(v)){ // on unit touched on solving panel
 				int index = unknow_list.get(v);
 				if (last_touched != null)
 					last_touched.setBackgroundColor(last_saved_color);
@@ -468,7 +468,7 @@ public class MainActivity extends ActionBarActivity {
 						unit_hint[i].setText("");
 				}
 			}
-			else if (select_list.containsKey(v)){
+			else if (select_list  != null && select_list.containsKey(v)){
 				String text = (String) ((TextView)v).getText();
 				int new_value = Integer.parseInt(text);
 				if (new_value != 0){
