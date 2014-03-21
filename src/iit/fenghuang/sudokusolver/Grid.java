@@ -122,6 +122,7 @@ public class Grid {
 		action.add(new Action(u, value));
 	}
 	public boolean rollback(){
+		if (action.size() < 1) return false; // newly added
 		Action act = action.get(action.size()-1);
 		action.remove(action.size()-1);
 		rows[act.u.row].addPossible(act.value);

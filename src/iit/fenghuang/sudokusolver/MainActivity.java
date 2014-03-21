@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -462,31 +463,36 @@ public class MainActivity extends ActionBarActivity {
 
 			}
 			else if (v == create_one){
-				setContentView(R.layout.create_panel);
-				create_commit = (ImageView) findViewById(R.id.create_commit);
-				create_commit.setOnClickListener(common_listener);
-				create_go_back = (ImageView) findViewById(R.id.create_goback);
-				create_go_back.setOnClickListener(common_listener);
-				create_select = new TextView[10];
-				create_units = new TextView[82];
-				create_chars = new char[82];
-				create_select_list = new HashMap<TextView, Integer>();
-				create_unit_list  = new HashMap<TextView, Integer>();
-				create_chars[0] = 'C';
-				for (int i = 1; i <= 81; i++)
-					create_chars[i] = '0';
-				String create_select_prefix = "create_select";
-				String create_unit_prefix = "create_textView";
-				for (int i = 0; i <= 9; i++){
-					create_select[i] = getTextViewResourceByName(create_select_prefix+i);
-					create_select[i].setOnClickListener(common_listener);
-					create_select_list.put(create_select[i], i);
-				}
-				for (int i = 1; i <= 81; i++){
-					create_units[i] = getTextViewResourceByName(create_unit_prefix+i);
-					create_units[i].setOnClickListener(common_listener);
-					create_unit_list.put(create_units[i], i);
-				}
+				Intent it = new Intent(MainActivity.this,MyCameraDemo.class);
+				MainActivity.this.startActivityForResult(it, 1);
+				
+				
+				
+//				setContentView(R.layout.create_panel);
+//				create_commit = (ImageView) findViewById(R.id.create_commit);
+//				create_commit.setOnClickListener(common_listener);
+//				create_go_back = (ImageView) findViewById(R.id.create_goback);
+//				create_go_back.setOnClickListener(common_listener);
+//				create_select = new TextView[10];
+//				create_units = new TextView[82];
+//				create_chars = new char[82];
+//				create_select_list = new HashMap<TextView, Integer>();
+//				create_unit_list  = new HashMap<TextView, Integer>();
+//				create_chars[0] = 'C';
+//				for (int i = 1; i <= 81; i++)
+//					create_chars[i] = '0';
+//				String create_select_prefix = "create_select";
+//				String create_unit_prefix = "create_textView";
+//				for (int i = 0; i <= 9; i++){
+//					create_select[i] = getTextViewResourceByName(create_select_prefix+i);
+//					create_select[i].setOnClickListener(common_listener);
+//					create_select_list.put(create_select[i], i);
+//				}
+//				for (int i = 1; i <= 81; i++){
+//					create_units[i] = getTextViewResourceByName(create_unit_prefix+i);
+//					create_units[i].setOnClickListener(common_listener);
+//					create_unit_list.put(create_units[i], i);
+//				}
 			}
 			else if ( create_select_list != null && create_select_list.containsKey(v)){ // on select touched in create panel
 				if (create_select_list.get(v) == 0){ // erase
@@ -630,5 +636,47 @@ public class MainActivity extends ActionBarActivity {
 			return rootView;
 		}
 	}
-
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		String result_from_OCR = null;
+		switch (resultCode){
+		case RESULT_OK:
+			result_from_OCR = data.getStringExtra("retmsg");
+			break;
+		case RESULT_CANCELED:
+			result_from_OCR = "C000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+			break;
+		default:
+			break;
+		}
+		setContentView(R.layout.create_panel);
+		create_commit = (ImageView) findViewById(R.id.create_commit);
+		create_commit.setOnClickListener(common_listener);
+		create_go_back = (ImageView) findViewById(R.id.create_goback);
+		create_go_back.setOnClickListener(common_listener);
+		create_select = new TextView[10];
+		create_units = new TextView[82];
+		create_chars = new char[82];
+		create_select_list = new HashMap<TextView, Integer>();
+		create_unit_list  = new HashMap<TextView, Integer>();
+		create_chars[0] = 'C';
+		for (int i = 1; i <= 81; i++)
+			create_chars[i] = result_from_OCR.charAt(i);
+		String create_select_prefix = "create_select";
+		String create_unit_prefix = "create_textView";
+		for (int i = 0; i <= 9; i++){
+			create_select[i] = getTextViewResourceByName(create_select_prefix+i);
+			create_select[i].setOnClickListener(common_listener);
+			create_select_list.put(create_select[i], i);
+		}
+		for (int i = 1; i <= 81; i++){
+			create_units[i] = getTextViewResourceByName(create_unit_prefix+i);
+			if (create_chars[i] != '0')
+				create_units[i].setText(""+create_chars[i]);
+			create_units[i].setOnClickListener(common_listener);
+			create_unit_list.put(create_units[i], i);
+		}
+	}
 }
