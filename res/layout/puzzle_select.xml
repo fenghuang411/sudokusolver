@@ -98,4 +98,14 @@
         android:layout_marginBottom="50dp"
         android:src="@drawable/create1" />
 
+    <TextView
+        android:id="@+id/self_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Author: Feng Huang  E-mail: huangfeng212@gmail.com"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="italic" />
+
 </RelativeLayout>

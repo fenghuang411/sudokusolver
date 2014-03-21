@@ -2,6 +2,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+ 
     android:background="@color/background_green" >
 
     <TableRow
@@ -1193,7 +1194,7 @@
             android:src="@drawable/goback" />
     </TableRow>
     <TableRow
-        android:id="@+id/tableRow11"
+        android:id="@+id/tableRow12"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
 
@@ -1304,4 +1305,20 @@
             android:textSize="20sp"
             android:textStyle="italic" />
     </TableRow>
+    
+     <TableRow
+        android:id="@+id/tableRow13"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+         >
+
+         <ImageView
+             android:id="@+id/win"
+             android:layout_width="0dp"
+             android:layout_height="fill_parent"
+             android:scaleType="fitXY"
+             android:layout_weight="1"
+             android:src="@drawable/win" />
+
+     </TableRow>
 </TableLayout>

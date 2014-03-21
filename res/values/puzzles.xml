@@ -7,6 +7,7 @@
               <color android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/unit_yellow" name="unit_yellow">#ffff66</color>
               <color android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/unit_red" name="unit_red">#ff0000</color>
     <string-array name="puzzles_easy" android:id="@+id/puzzles_easy">
+        <item >select</item>
         <item >E1</item>
         <item >E2</item>
         <item >E3</item>
@@ -14,6 +15,7 @@
         <item >E5</item>
     </string-array>
     <string-array name="puzzles_medium" android:id="@+id/puzzles_medium">
+        <item >select</item>
         <item >M1</item>
         <item >M2</item>
         <item >M3</item>
@@ -21,6 +23,7 @@
         <item >M5</item>
     </string-array>
     <string-array name="puzzles_hard" android:id="@+id/puzzles_hard">
+        <item >select</item>
         <item >H1</item>
         <item >H2</item>
         <item >H3</item>
@@ -28,6 +31,7 @@
         <item >H5</item>
     </string-array>
         <string-array name="puzzles_superhard" android:id="@+id/puzzles_superhard">
+        <item >select</item>
         <item >S1</item>
         <item >S2</item>
         <item >S3</item>
