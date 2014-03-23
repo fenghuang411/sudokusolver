@@ -404,6 +404,7 @@ public class MainActivity extends ActionBarActivity {
 				unknow_list = new HashMap<TextView,Integer>();
 				select_list = new HashMap<TextView, Integer>();
 				puzzle_string = String.valueOf(create_chars);
+				current_answer = puzzle_string.toCharArray();
 				for (int i = 1; i <= 81; i++){
 					units[i] = getTextViewResourceByName(prefix+i);// load all units
 					if (puzzle_string.charAt(i) != '0'){
@@ -678,5 +679,6 @@ public class MainActivity extends ActionBarActivity {
 			create_units[i].setOnClickListener(common_listener);
 			create_unit_list.put(create_units[i], i);
 		}
+		
 	}
 }
